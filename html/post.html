@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ScriBBler - Post</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montez&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!--Styles-->
+    <link rel="stylesheet" href="../styles/common.css">
+    <link rel="stylesheet" href="../styles/post.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div>
+            <a class="website-title">ScriBBler</a>
+            <h4 class="subheading">Explore, Imagine, Create</h4>
+        </div>
+        <div>
+            <button id="header-button-sign-up" class="header-buttons">Sign Up</button>
+            <button id="header-button-sign-in" class="header-buttons">Sign In</button>
+        </div>
+
+        <div id="sign-up-modal" class="modal">
+            <div class="modal-content">
+                <h2 class="modal-header">Get Started <i id="signup-modal-close-button" class="fa fa-times"
+                        aria-hidden="true"></i></h2>
+                <hr>
+                <form>
+                    <label>Name</label>
+                    <input class="modal-input" name="name" type="text" placeholder="Enter your name" required
+                        autofocus />
+                    <label>Username</label>
+                    <input class="modal-input" name="username" type="text" placeholder="Enter your name" required
+                        autofocus />
+                    <label>Password</label>
+                    <input class="modal-input" name="username" type="password" placeholder="Enter your password"
+                        required autofocus />
+                    <label>Confirm Password</label>
+                    <input class="modal-input" name="username" type="password" placeholder="Re-enter your password"
+                        required autofocus />
+                    <button id="modal-button-signup" class="modal-buttons" name="Sign Up">Sign Up</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="sign-in-modal" class="modal">
+            <div class="modal-content">
+                <h2 class="modal-header">Welcome Back!<i id="signin-modal-close-button" class="fa fa-times"
+                        aria-hidden="true"></i></h2>
+                <hr>
+                <form>
+                    <label>Username</label>
+                    <input class="modal-input" name="username" type="text" placeholder="Enter your name" required
+                        autofocus />
+                    <label>Password</label>
+                    <input class="modal-input" name="username" type="password" placeholder="Enter your password"
+                        required autofocus />
+                    <button id="modal-button-signin" class="modal-buttons" name="Sign In">Sign In</button>
+                    <div class="not-a-member">Not a member?
+                        <pre> </pre><a id="signin-href" href="#sign-up-modal"> Sign Up</a></div>
+                </form>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- Container for a single post view-->
+    <div class="post">
+        <h3 id="post-title-id" class="post-title" contenteditable='false'></h3>
+        <div class="post-author">
+            <h4 id="author" class="author-name"></h4>
+            <button id="edit-save-button" class="button edit-button" onclick="editClicked()">Edit <i
+                    class="fa fa-edit fa-lg" aria-hidden="true"></i></button>
+        </div>
+        <p id='post-desc' class="post-description" contenteditable='false'></p>
+        <button id="like-button" class=button onclick="likeClicked()"><i class="fa fa-thumbs-up fa-lg"
+                aria-hidden="true"></i> Like</button>
+        <p id="like-button-text" class="like-text">Be the first one to like this</p>
+        <div class="comment-area">
+            <textarea id="comment" class="comment-text-area" placeholder="Leave a comment..." value=""></textarea>
+            <button id="comment-button" class="button" onclick="commentClicked('comment')">Comment</button>
+            <h4>All Comments</h4>
+            <div id="comments" class="all-comments">
+            </div>
+        </div>
+    </div>
+
+    <!--Scripts-->
+    <script src="../scripts/common.js">
+    </script>
+
+    <script src="../scripts/post.js">
+    </script>
+</body>
+
+</html>

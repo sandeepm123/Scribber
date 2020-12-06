@@ -38,3 +38,16 @@ no_modal_button.onclick = function () {
 function toggleDeleteModal() {
     delete_post_modal.classList.toggle("show-modal");
 }
+
+/**
+ * This method is called when you click on ... icon.
+ * Saves the content of the selected post in session and opens post.html.
+ */
+function openPost(author, title, content) {
+
+    sessionStorage.setItem('postAuthorName', author.innerHTML);
+    sessionStorage.setItem('postTitle', title.innerHTML);
+    sessionStorage.setItem('postContent', content.innerHTML);
+    var url = "../html/post.html?heading";
+    window.location.href = url;
+}
